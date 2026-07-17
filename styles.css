@@ -489,6 +489,7 @@ svg {
 }
 
 .text-link {
+  margin-left: auto;
   color: var(--blue-dark);
   font-weight: 700;
   text-underline-offset: 5px;
@@ -1037,7 +1038,8 @@ svg {
   }
 
   .text-link {
-    align-self: flex-start;
+    align-self: flex-end;
+    margin-left: 0;
   }
 
   .github-link small {
