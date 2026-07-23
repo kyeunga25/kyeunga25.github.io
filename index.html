@@ -5,19 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Ken Yeung's personal homepage — useful web tools, cloud projects, and things in progress."
+      content="Ken Yeung builds practical web products for wallpapers, anime music, study audio, ecommerce visuals, and cloud-based workflows."
     />
+    <meta name="author" content="Ken Yeung" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="color-scheme" content="light" />
     <meta name="theme-color" content="#edf1d9" />
-    <meta property="og:title" content="Ken Yeung" />
+    <meta property="og:title" content="Ken Yeung — Building Useful Web Products" />
     <meta
       property="og:description"
-      content="A small homepage about useful web tools, cloud projects, and things in progress."
+      content="Practical web products for wallpapers, anime music, study audio, ecommerce visuals, and cloud-based workflows."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://k-y.cc/" />
-    <title>Ken Yeung</title>
+    <meta property="og:site_name" content="Ken Yeung" />
+    <meta property="og:locale" content="en_HK" />
+    <meta property="og:image" content="https://k-y.cc/assets/anime-sky.webp" />
+    <meta property="og:image:type" content="image/webp" />
+    <meta property="og:image:width" content="1672" />
+    <meta property="og:image:height" content="941" />
+    <meta
+      property="og:image:alt"
+      content="Soft illustrated sky background from Ken Yeung's personal homepage"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Ken Yeung — Building Useful Web Products" />
+    <meta
+      name="twitter:description"
+      content="Practical web products for wallpapers, anime music, study audio, ecommerce visuals, and cloud-based workflows."
+    />
+    <meta name="twitter:image" content="https://k-y.cc/assets/anime-sky.webp" />
+    <meta
+      name="twitter:image:alt"
+      content="Soft illustrated sky background from Ken Yeung's personal homepage"
+    />
+    <title>Ken Yeung — Building Useful Web Products</title>
+    <link rel="canonical" href="https://k-y.cc/" />
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="styles.css?v=20260724-01" />
+    <link rel="stylesheet" href="styles.css?v=20260724-02" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "name": "Ken Yeung — Building Useful Web Products",
+        "url": "https://k-y.cc/",
+        "description": "Ken Yeung builds practical web products for wallpapers, anime music, study audio, ecommerce visuals, and cloud-based workflows.",
+        "mainEntity": {
+          "@type": "Person",
+          "name": "Ken Yeung",
+          "url": "https://k-y.cc/",
+          "sameAs": ["https://github.com/kyeunga25"],
+          "knowsAbout": [
+            "Web products",
+            "Cloud systems",
+            "Systems integration",
+            "Automation"
+          ]
+        }
+      }
+    </script>
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -51,7 +97,7 @@
 
         <nav class="site-nav" aria-label="Primary navigation">
           <a href="#projects">Projects</a>
-          <a href="https://github.com/kyeunga25" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="https://github.com/kyeunga25" target="_blank" rel="me noreferrer">GitHub</a>
         </nav>
       </header>
 
@@ -130,62 +176,132 @@
             <h2 id="project-title">Selected projects</h2>
           </div>
 
-          <div class="project-layout">
-            <a
-              class="project-media"
-              href="https://wallpect.k-y.cc/"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Open Wallpect"
-            >
-              <img
-                src="assets/wallpect-dashboard.webp"
-                alt="Wallpect wallpaper fitting interface"
-                width="1568"
-                height="1000"
-              />
-            </a>
+          <div class="project-showcase">
+            <article class="project-feature">
+              <a
+                class="project-feature-media"
+                href="https://wallpect.k-y.cc/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Open Wallpect"
+              >
+                <img
+                  src="assets/wallpect-dashboard.webp"
+                  alt="Wallpect wallpaper fitting interface"
+                  width="1568"
+                  height="1003"
+                />
+              </a>
 
-            <div class="project-copy">
-              <h3>Wallpect</h3>
-              <p>
-                Fit wallpapers for Apple devices before downloading. Your
-                images stay in the browser and are not uploaded.
-              </p>
-              <div class="project-actions">
-                <a
-                  class="button"
-                  href="https://wallpect.k-y.cc/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Try Wallpect
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M7 17 17 7M8 7h9v9" />
-                  </svg>
-                </a>
-                <a
-                  class="text-link"
-                  href="https://github.com/kyeunga25/wallpect"
-                  target="_blank"
-                  rel="noreferrer"
-                >Source</a>
+              <div class="project-feature-copy">
+                <div class="project-title-row">
+                  <h3>Wallpect</h3>
+                  <span class="project-status">Available</span>
+                </div>
+                <p>
+                  Fit wallpapers for Apple devices before downloading. Images
+                  stay in your browser.
+                </p>
+                <div class="project-links">
+                  <a
+                    class="project-link project-link-primary"
+                    href="https://wallpect.k-y.cc/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Open app
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M7 17 17 7M8 7h9v9" />
+                    </svg>
+                  </a>
+                  <a
+                    class="project-link"
+                    href="https://github.com/kyeunga25/wallpect"
+                    target="_blank"
+                    rel="noreferrer"
+                  >Source</a>
+                </div>
               </div>
-              <p class="project-note">
-                Also building
-                <a
-                  href="https://anisonary.k-y.cc/"
-                  target="_blank"
-                  rel="noreferrer"
-                >Anisonary</a>,
-                an anime music guide, and
-                <a
-                  href="https://github.com/kyeunga25/studymix-ai"
-                  target="_blank"
-                  rel="noreferrer"
-                >StudyMix AI</a>,
-                an early experiment with study-friendly audio.
-              </p>
+            </article>
+
+            <div class="project-grid">
+              <article class="project-card">
+                <div class="project-card-topline">
+                  <span class="project-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M9 18V5l10-2v13" />
+                      <ellipse cx="6" cy="18" rx="3" ry="2.2" />
+                      <ellipse cx="16" cy="16" rx="3" ry="2.2" />
+                    </svg>
+                  </span>
+                  <span class="project-status">Available</span>
+                </div>
+                <h3>Anisonary</h3>
+                <p>Browse anime songs by season and Japanese broadcast day.</p>
+                <div class="project-links">
+                  <a
+                    class="project-link"
+                    href="https://anisonary.k-y.cc/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >Open</a>
+                  <a
+                    class="project-link"
+                    href="https://github.com/kyeunga25/anisonary"
+                    target="_blank"
+                    rel="noreferrer"
+                  >Source</a>
+                </div>
+              </article>
+
+              <article class="project-card">
+                <div class="project-card-topline">
+                  <span class="project-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M3 12h2l2-5 3 10 3-12 3 14 2-7h3" />
+                    </svg>
+                  </span>
+                  <span class="project-status">In development</span>
+                </div>
+                <h3>StudyMix AI</h3>
+                <p>Turn authorised audio into study-friendly instrumentals.</p>
+                <div class="project-links">
+                  <a
+                    class="project-link"
+                    href="https://github.com/kyeunga25/studymix-ai"
+                    target="_blank"
+                    rel="noreferrer"
+                  >Source</a>
+                </div>
+              </article>
+
+              <article class="project-card">
+                <div class="project-card-topline">
+                  <span class="project-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                      <rect x="3" y="4" width="18" height="16" rx="2" />
+                      <path d="m7 16 3.5-4 2.5 3 2-2 3 3M8 9h.01" />
+                    </svg>
+                  </span>
+                  <span class="project-status">Closed beta</span>
+                </div>
+                <h3>AislePack</h3>
+                <p>Create coordinated ecommerce campaign visuals.</p>
+                <div class="project-links">
+                  <a
+                    class="project-link"
+                    href="https://motive-ecommerce-visuals.kyeunga25.workers.dev/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >Preview</a>
+                  <a
+                    class="project-link"
+                    href="https://github.com/kyeunga25/marketing_image_ai_web"
+                    target="_blank"
+                    rel="noreferrer"
+                  >Source</a>
+                </div>
+              </article>
             </div>
           </div>
 
@@ -243,7 +359,7 @@
             class="github-link"
             href="https://github.com/kyeunga25"
             target="_blank"
-            rel="noreferrer"
+            rel="me noreferrer"
           >
             <svg class="github-mark" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M12 2.7a9.5 9.5 0 0 0-3 18.5c.5.1.7-.2.7-.5v-1.9c-2.9.6-3.5-1.2-3.5-1.2-.5-1.2-1.2-1.5-1.2-1.5-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 1.7 2.6 1.2 3.2.9.1-.7.4-1.2.7-1.5-2.3-.3-4.7-1.2-4.7-4.7 0-1 .4-1.9 1-2.6-.1-.3-.4-1.3.1-2.6 0 0 .8-.3 2.7 1a9.2 9.2 0 0 1 4.9 0c1.9-1.3 2.7-1 2.7-1 .5 1.3.2 2.3.1 2.6.6.7 1 1.6 1 2.6 0 3.6-2.4 4.4-4.7 4.7.4.3.7 1 .7 1.9v2.8c0 .4.2.6.7.5A9.5 9.5 0 0 0 12 2.7Z" />

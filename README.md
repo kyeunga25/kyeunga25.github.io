@@ -1,6 +1,6 @@
 # Ken Yeung — Personal Dashboard
 
-A small static homepage for [k-y.cc](https://k-y.cc). It keeps the public profile intentionally simple: a short introduction, current interests, tools used in projects, and selected work including Wallpect, Anisonary, and StudyMix AI.
+A small static homepage for [k-y.cc](https://k-y.cc). It keeps the public profile intentionally simple with a short introduction, current interests, and a responsive project showcase for Wallpect, Anisonary, StudyMix AI, and AislePack. The page also includes canonical, Open Graph, Twitter Card, and structured profile metadata.
 
 ## Local preview
 
