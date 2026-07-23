@@ -626,6 +626,19 @@ svg {
   line-height: 1.55;
 }
 
+.project-copy .project-note {
+  margin-top: 20px;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.project-note a {
+  color: var(--blue-dark);
+  font-weight: 700;
+  text-underline-offset: 3px;
+}
+
 .project-actions {
   display: flex;
   flex-wrap: wrap;
@@ -1026,6 +1039,10 @@ svg {
     flex-direction: column;
     margin-top: 0;
   }
+
+  .project-copy .project-note {
+    grid-column: 1 / -1;
+  }
 }
 
 @media (min-width: 921px) and (max-height: 760px) {
@@ -1139,6 +1156,11 @@ svg {
   .project-copy p {
     font-size: 0.86rem;
     line-height: 1.4;
+  }
+
+  .project-copy .project-note {
+    margin-top: 10px;
+    font-size: 0.75rem;
   }
 
   .project-actions {
@@ -1302,6 +1324,11 @@ svg {
   .project-actions {
     grid-column: auto;
     grid-row: auto;
+  }
+
+  .project-copy .project-note {
+    margin-top: 18px;
+    font-size: 0.88rem;
   }
 
   .theater-easter-egg {
