@@ -187,12 +187,6 @@ svg {
   text-decoration: none;
 }
 
-.site-nav small {
-  color: var(--muted);
-  font-size: 0.7em;
-  font-weight: 600;
-}
-
 .site-nav a::after {
   position: absolute;
   right: 0;
@@ -481,14 +475,6 @@ svg {
   letter-spacing: -0.025em;
 }
 
-.panel-heading h2 small {
-  margin-left: 5px;
-  color: var(--muted);
-  font-size: 0.58em;
-  font-weight: 650;
-  letter-spacing: 0;
-}
-
 .panel-heading > svg {
   width: 28px;
   height: 28px;
@@ -536,22 +522,6 @@ svg {
   line-height: 1.25;
 }
 
-.interest-list li > span {
-  display: grid;
-  min-width: 0;
-  gap: 1px;
-}
-
-.interest-list strong {
-  font-size: 0.94em;
-  font-weight: 700;
-}
-
-.interest-list small {
-  color: var(--muted);
-  font-size: 0.7em;
-}
-
 .interest-list svg {
   width: 25px;
   height: 25px;
@@ -584,8 +554,8 @@ svg {
   bottom: auto;
   left: auto;
   z-index: 2;
-  opacity: 0.22;
-  transform: scale(0.78) rotate(3deg);
+  opacity: 0.48;
+  transform: scale(0.88) rotate(3deg);
 }
 
 .project-panel::after,
@@ -851,13 +821,6 @@ svg {
   color: var(--muted);
   font-size: 0.96rem;
   font-weight: 650;
-}
-
-.exploring-block h3 small {
-  margin-left: 4px;
-  color: #8a927f;
-  font-size: 0.72em;
-  font-weight: 600;
 }
 
 .exploring-block h3 span {
@@ -1265,7 +1228,7 @@ svg {
     grid-template-rows:
       154px
       314px
-      102px
+      122px
       auto;
     gap: 12px;
     width: min(1440px, calc(100% - 32px));
@@ -1424,11 +1387,6 @@ svg {
     padding: 13px 21px;
   }
 
-  .theater-easter-egg {
-    display: none;
-  }
-
-  .project-ticket,
   .mizuki-magic,
   .tsubasa-card-wings,
   .julia-card-guitar {
@@ -1602,10 +1560,6 @@ svg {
     right: 22px;
   }
 
-  .project-ticket {
-    display: none;
-  }
-
   .tsubasa-card-wings {
     top: 18px;
     right: 17px;
@@ -1618,6 +1572,13 @@ svg {
 
   .project-panel {
     padding-bottom: 24px;
+  }
+
+  .project-ticket {
+    top: 16px;
+    right: 18px;
+    opacity: 0.42;
+    transform: scale(0.72) rotate(3deg);
   }
 
   .julia-card-guitar {
@@ -1705,10 +1666,6 @@ svg {
     max-width: 185px;
   }
 
-  .site-nav small {
-    display: none;
-  }
-
   .active-project {
     grid-template-columns: 44px minmax(0, 1fr);
     gap: 11px;
@@ -1730,6 +1687,12 @@ svg {
 }
 
 @media (max-width: 360px) {
+  .project-ticket {
+    right: 8px;
+    opacity: 0.36;
+    transform: scale(0.5) rotate(3deg);
+  }
+
   .site-music-mark {
     display: none;
   }
