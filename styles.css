@@ -180,8 +180,17 @@ svg {
 
 .site-nav a {
   position: relative;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
   padding: 24px 0 20px;
   text-decoration: none;
+}
+
+.site-nav small {
+  color: var(--muted);
+  font-size: 0.7em;
+  font-weight: 600;
 }
 
 .site-nav a::after {
@@ -215,12 +224,14 @@ svg {
   grid-template-areas:
     "intro interests"
     "project tools"
-    "project elsewhere";
+    "project elsewhere"
+    "active active";
   grid-template-rows:
     minmax(190px, 270px)
     minmax(242px, 360px)
-    minmax(128px, 180px);
-  align-content: center;
+    minmax(128px, 180px)
+    auto;
+  align-content: start;
   gap: 18px;
   width: min(1440px, calc(100% - 48px));
   min-height: 0;
@@ -470,6 +481,14 @@ svg {
   letter-spacing: -0.025em;
 }
 
+.panel-heading h2 small {
+  margin-left: 5px;
+  color: var(--muted);
+  font-size: 0.58em;
+  font-weight: 650;
+  letter-spacing: 0;
+}
+
 .panel-heading > svg {
   width: 28px;
   height: 28px;
@@ -515,6 +534,22 @@ svg {
   background: #f7f9f0;
   font-size: 1rem;
   line-height: 1.25;
+}
+
+.interest-list li > span {
+  display: grid;
+  min-width: 0;
+  gap: 1px;
+}
+
+.interest-list strong {
+  font-size: 0.94em;
+  font-weight: 700;
+}
+
+.interest-list small {
+  color: var(--muted);
+  font-size: 0.7em;
 }
 
 .interest-list svg {
@@ -694,12 +729,35 @@ svg {
   box-shadow: 0 0 0 2px rgba(237, 200, 77, 0.18);
 }
 
+.project-status.is-live::before {
+  background: #7fa648;
+  box-shadow: 0 0 0 2px rgba(127, 166, 72, 0.18);
+}
+
+.project-status.is-beta::before {
+  background: var(--dream-yellow);
+}
+
+.project-status.is-progress::before {
+  background: var(--mizuki-blue);
+  box-shadow: 0 0 0 2px rgba(153, 183, 220, 0.2);
+}
+
 .project-card-body > p {
   flex: 1 1 auto;
   margin: 7px 0 0;
   color: var(--muted);
   font-size: clamp(0.68rem, 0.82vw, 0.8rem);
   line-height: 1.34;
+}
+
+.project-meta {
+  display: block;
+  margin-top: 5px;
+  color: #7a836f;
+  font-size: clamp(0.58rem, 0.7vw, 0.68rem);
+  font-weight: 650;
+  line-height: 1.28;
 }
 
 .project-links {
@@ -793,6 +851,13 @@ svg {
   color: var(--muted);
   font-size: 0.96rem;
   font-weight: 650;
+}
+
+.exploring-block h3 small {
+  margin-left: 4px;
+  color: #8a927f;
+  font-size: 0.72em;
+  font-weight: 600;
 }
 
 .exploring-block h3 span {
@@ -939,6 +1004,113 @@ svg {
 
 .external-icon {
   color: var(--blue);
+}
+
+.active-panel {
+  grid-area: active;
+  min-height: 0;
+  padding: 22px 26px 26px;
+  animation-delay: 230ms;
+}
+
+.active-panel::after {
+  position: absolute;
+  top: -28px;
+  right: 11%;
+  width: 150px;
+  height: 88px;
+  content: "";
+  background-image: radial-gradient(circle, #b1c37e 1.2px, transparent 1.5px);
+  background-size: 7px 7px;
+  opacity: 0.22;
+  transform: rotate(7deg);
+}
+
+.active-heading {
+  align-items: flex-start;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #d9dfcd;
+}
+
+.active-heading > svg {
+  flex: 0 0 28px;
+  stroke: var(--blue);
+}
+
+.active-heading > div {
+  display: grid;
+  gap: 3px;
+}
+
+.active-heading p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+.active-projects {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  padding-top: 14px;
+}
+
+.active-project {
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr);
+  gap: 14px;
+  padding: 16px;
+  border: 1px solid #ccd5bd;
+  border-radius: 12px;
+  background: rgba(247, 249, 240, 0.82);
+}
+
+.active-mark {
+  display: grid;
+  width: 54px;
+  height: 54px;
+  place-items: center;
+  border: 1.5px solid #88a44e;
+  border-radius: 16px;
+  color: var(--blue-dark);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.75), transparent),
+    var(--blue-soft);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.rigstage-mark {
+  border-color: #879fbe;
+  color: #587393;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.78), transparent),
+    #edf3fa;
+}
+
+.active-project-body {
+  min-width: 0;
+}
+
+.active-project h3 {
+  margin: 0;
+  font-size: 1.02rem;
+  letter-spacing: -0.025em;
+}
+
+.active-project p {
+  margin: 7px 0 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.48;
+}
+
+.active-project .project-links {
+  margin-top: 8px;
 }
 
 .site-footer {
@@ -1092,8 +1264,9 @@ svg {
   .dashboard {
     grid-template-rows:
       154px
-      minmax(220px, 1fr)
-      102px;
+      314px
+      102px
+      auto;
     gap: 12px;
     width: min(1440px, calc(100% - 32px));
     padding: 12px 0;
@@ -1185,6 +1358,12 @@ svg {
     line-height: 1.26;
   }
 
+  .project-meta {
+    margin-top: 2px;
+    font-size: 0.54rem;
+    line-height: 1.2;
+  }
+
   .project-links {
     gap: 10px;
     margin-top: 2px;
@@ -1268,6 +1447,14 @@ svg {
   .site-footer {
     min-height: 44px;
   }
+
+  .active-panel {
+    padding: 16px 20px 20px;
+  }
+
+  .active-project {
+    padding: 12px;
+  }
 }
 
 @media (max-width: 920px) {
@@ -1312,6 +1499,7 @@ svg {
       "interests"
       "tools"
       "project"
+      "active"
       "elsewhere";
     grid-template-rows: auto;
     align-content: normal;
@@ -1327,6 +1515,7 @@ svg {
   .interests-panel,
   .tools-panel,
   .project-panel,
+  .active-panel,
   .elsewhere-panel {
     min-height: auto;
     padding: 24px;
@@ -1386,6 +1575,14 @@ svg {
   .project-link {
     min-height: 28px;
     font-size: 0.72rem;
+  }
+
+  .active-projects {
+    grid-template-columns: 1fr;
+  }
+
+  .active-project {
+    padding: 15px;
   }
 
   .theater-easter-egg {
@@ -1495,12 +1692,40 @@ svg {
     font-size: 0.88rem;
   }
 
+  .project-meta {
+    margin-top: 6px;
+    font-size: 0.66rem;
+  }
+
   .project-status {
     font-size: 0.62rem;
   }
 
   .github-link small {
     max-width: 185px;
+  }
+
+  .site-nav small {
+    display: none;
+  }
+
+  .active-project {
+    grid-template-columns: 44px minmax(0, 1fr);
+    gap: 11px;
+    padding: 13px;
+  }
+
+  .active-mark {
+    width: 44px;
+    height: 44px;
+    border-radius: 13px;
+    font-size: 0.72rem;
+  }
+
+  .active-project .project-title-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
   }
 }
 
