@@ -1,0 +1,22 @@
+{
+  "name": "k-y-cc-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "npm run check:html && npm run check:format && npm run check:site",
+    "check:html": "html-validate index.html 404.html",
+    "check:format": "prettier --check index.html 404.html styles.css README.md docs scripts .github package.json .htmlvalidate.json",
+    "check:site": "node scripts/check-site.mjs",
+    "check:links": "node scripts/check-links.mjs",
+    "format": "prettier --write index.html 404.html styles.css README.md docs scripts .github package.json .htmlvalidate.json",
+    "preview": "python3 -m http.server 4173"
+  },
+  "engines": {
+    "node": "^22.22.0 || >=24.8.0"
+  },
+  "devDependencies": {
+    "html-validate": "11.6.0",
+    "prettier": "3.9.6"
+  }
+}
