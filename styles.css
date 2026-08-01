@@ -377,7 +377,12 @@ svg {
   border-radius: 5px;
   color: rgba(105, 119, 76, 0.68);
   background:
-    linear-gradient(90deg, transparent 48%, rgba(224, 191, 89, 0.13) 50%, transparent 52%),
+    linear-gradient(
+      90deg,
+      transparent 48%,
+      rgba(224, 191, 89, 0.13) 50%,
+      transparent 52%
+    ),
     rgba(237, 242, 217, 0.72);
   line-height: 1;
   opacity: 0.38;
@@ -573,6 +578,8 @@ svg {
 }
 
 .project-heading {
+  align-items: flex-start;
+  padding-right: 62px;
   padding-bottom: 14px;
   border-bottom: 2px solid transparent;
   border-image: linear-gradient(
@@ -582,6 +589,25 @@ svg {
       rgba(135, 159, 69, 0.2) 100%
     )
     1;
+}
+
+.project-heading-copy {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+}
+
+.project-heading-copy p {
+  max-width: 480px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.68rem;
+  line-height: 1.35;
+}
+
+.project-heading-copy time {
+  color: var(--blue-dark);
+  font-weight: 700;
 }
 
 .project-heading > svg {
@@ -1051,8 +1077,7 @@ svg {
   border-color: #879fbe;
   color: #587393;
   background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.78), transparent),
-    #edf3fa;
+    linear-gradient(145deg, rgba(255, 255, 255, 0.78), transparent), #edf3fa;
 }
 
 .active-project-body {
@@ -1130,6 +1155,91 @@ svg {
 
 .les-paul-body {
   fill: rgba(215, 56, 95, 0.22);
+}
+
+.not-found-shell {
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+.not-found-main {
+  display: grid;
+  flex: 1 1 auto;
+  width: min(760px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: clamp(40px, 9vw, 100px) 0;
+  place-items: center;
+}
+
+.not-found-panel {
+  width: 100%;
+  padding: clamp(32px, 7vw, 64px);
+  text-align: center;
+}
+
+.not-found-code {
+  display: block;
+  color: var(--blue-dark);
+  font-size: clamp(3.4rem, 12vw, 7rem);
+  font-weight: 800;
+  letter-spacing: -0.08em;
+  line-height: 0.85;
+  opacity: 0.14;
+}
+
+.not-found-kicker {
+  margin: 24px 0 0;
+  color: var(--blue-dark);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.not-found-panel h1 {
+  margin: 8px 0 0;
+  font-size: clamp(2.2rem, 7vw, 4rem);
+  letter-spacing: -0.055em;
+  line-height: 1;
+}
+
+.not-found-panel > p:not(.not-found-kicker) {
+  max-width: 520px;
+  margin: 18px auto 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.not-found-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.not-found-actions a {
+  display: inline-flex;
+  min-height: 44px;
+  padding: 10px 18px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--blue);
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.not-found-primary {
+  color: #fff;
+  background: var(--blue-dark);
+}
+
+.not-found-secondary {
+  color: var(--blue-dark);
+  background: #f7f9f0;
 }
 
 .les-paul-pickguard {
@@ -1297,6 +1407,10 @@ svg {
 
   .project-heading {
     padding-bottom: 9px;
+  }
+
+  .project-heading-copy p {
+    display: none;
   }
 
   .project-showcase {
