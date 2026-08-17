@@ -1,8 +1,10 @@
-# Ken Yeung — Personal Dashboard
+# k-y.cc — Personal Dashboard
 
 [k-y.cc](https://k-y.cc/) 是一個英文為主的個人 homepage、professional dashboard
 及 portfolio。網站只整理可由公開 repository、release、production route 及 access
 狀態核對的工作，不把 preview、草稿或本機功能描述為已發布產品。
+
+[入口網站 / Live](https://k-y.cc/) · [項目狀態 / Project status](docs/PROJECT_STATUS.md) · [安全政策 / Security](SECURITY.md) · [版權 / Copyright](COPYRIGHT.md)
 
 ## 運行與部署環境
 
