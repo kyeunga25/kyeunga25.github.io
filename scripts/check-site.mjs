@@ -71,6 +71,15 @@ const requiredIndexFragments = [
   "AisleStage",
   "Personal Space",
   "RigStage",
+  'datetime="2026-08-17"',
+  "Learning, building, and moving toward the next stage.",
+  "v0.4.0 · 47 display profiles · 191 named models",
+  "v1.3.0 · 280 titles · 615 theme records",
+  "v0.5.1 release · v0.6.0 development · Invite-only",
+  "Live · v0.8.0",
+  "STAGE",
+  "765",
+  "The stars are shining. The show goes on.",
   "https://aislestage.k-y.cc/",
   "https://rigstage.k-y.cc/",
 ];
@@ -87,6 +96,11 @@ const forbiddenFragments = [
   "motive-ecommerce-visuals",
   "v0.4.0 · 139 anime",
   "Live · v0.3.0",
+  "Public work, verified before it is listed.",
+  "v0.2.2 · 74 device profiles",
+  "v1.1.0 · 280 titles",
+  "Live · v0.6.0",
+  'datetime="2026-08-02"',
   "http://",
   "<form",
   "<script src=",
@@ -98,6 +112,18 @@ for (const fragment of forbiddenFragments) {
     `index.html contains stale or out-of-scope content: ${fragment}`,
   );
 }
+
+const rigStageCard = [
+  ...indexHtml.matchAll(/<article class="active-project">[\s\S]*?<\/article>/g),
+]
+  .map((match) => match[0])
+  .find((card) => card.includes("<h3>RigStage</h3>"));
+
+assert(rigStageCard, "index.html is missing the RigStage project card");
+assert(
+  !rigStageCard.includes(">Source</a"),
+  "RigStage must not expose a private repository link",
+);
 
 assert(
   notFoundHtml.includes('<meta name="robots" content="noindex, follow"'),

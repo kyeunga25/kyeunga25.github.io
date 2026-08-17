@@ -1,6 +1,6 @@
 # 公開項目狀態 / Public project status
 
-最後核對 / Last reviewed: **2026-08-02**
+最後核對 / Last reviewed: **2026-08-17**
 
 本頁是 portfolio 公開文案的證據索引，只記錄可由公開 repository、release、CI
 及 production route 支持的狀態，不記錄私人部署設定、使用者資料或內部計劃。
@@ -12,23 +12,50 @@
   只供受邀身份使用，或 production 功能仍明確停用。
 - **Preview / draft / local**：只屬開發證據，不可標示為 production 或 Live。
 - CI、PR 或 release tag 只證明 repository 狀態；必須另行核對 live route。
+- `main` source version、GitHub Release 與 production 是三種不同證據；如版本不同，
+  必須分開列出，不以最新數字推定已正式發布。
 
 ## 已核對項目
 
-| 項目           | Portfolio 狀態 | 公開版本                                                                    | 公開入口與證據                                                                                       | 可支持的公開描述                                                                                                                                            |
-| -------------- | -------------- | --------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Wallpect       | Live           | [v0.2.2](https://github.com/kyeunga25/wallpect/releases/tag/v0.2.2)         | [Live](https://wallpect.k-y.cc/) · [Source](https://github.com/kyeunga25/wallpect)                   | Browser-only wallpaper preview, fitting and exact-size export for 74 reviewed Apple-device profiles.                                                        |
-| Anisonary      | Live           | [v1.1.0](https://github.com/kyeunga25/anisonary/releases/tag/v1.1.0)        | [Live](https://anisonary.k-y.cc/) · [Source](https://github.com/kyeunga25/anisonary)                 | Four reviewed seasonal snapshots with 280 titles and 615 known OP／ED records.                                                                              |
-| StudyMix AI    | Private beta   | No public release tag                                                       | [Source](https://github.com/kyeunga25/studymix-ai)                                                   | Invite-oriented audio-restyling workspace; production audio upload and real generation remain disabled. No public live URL was verified on the review date. |
-| AisleStage     | Closed beta    | [v0.5.1](https://github.com/kyeunga25/aislestage/releases/tag/v0.5.1)       | [Public landing](https://aislestage.k-y.cc/) · [Source](https://github.com/kyeunga25/aislestage)     | Public product explanation with an invite-only workspace for approved bilingual, three-format Campaign Packs.                                               |
-| Personal Space | Live           | [v0.6.0](https://github.com/kyeunga25/personal-space/releases/tag/v0.6.0)   | [Live](https://space.k-y.cc/) · [Source](https://github.com/kyeunga25/personal-space)                | Public Notes, Articles, search, archives and reviewed Editions with an Access-protected owner Studio.                                                       |
-| RigStage       | Invite-only    | [v1.0.1](https://github.com/kyeunga25/pc-ai-3d-builder/releases/tag/v1.0.1) | [Public landing](https://rigstage.k-y.cc/) · [Source](https://github.com/kyeunga25/pc-ai-3d-builder) | Public product explanation with an Access-protected PC catalogue, asset-review and 3D assembly workspace.                                                   |
+| 項目           | Portfolio 狀態 | 版本／開發程度                                                               | 公開入口                                                                                         |
+| -------------- | -------------- | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| Wallpect       | Live           | [v0.4.0 release](https://github.com/kyeunga25/wallpect/releases/tag/v0.4.0)  | [Live](https://wallpect.k-y.cc/) · [Source](https://github.com/kyeunga25/wallpect)               |
+| Anisonary      | Live           | [v1.3.0 release](https://github.com/kyeunga25/anisonary/releases/tag/v1.3.0) | [Live](https://anisonary.k-y.cc/) · [Source](https://github.com/kyeunga25/anisonary)             |
+| StudyMix AI    | Private beta   | `main` verified；no public release／live URL                                 | [Source](https://github.com/kyeunga25/studymix-ai)                                               |
+| AisleStage     | Closed beta    | v0.5.1 released；v0.6.0 in source development                                | [Public landing](https://aislestage.k-y.cc/) · [Source](https://github.com/kyeunga25/aislestage) |
+| Personal Space | Live           | v0.8.0 on `main`；latest GitHub Release tag v0.7.0                           | [Live](https://space.k-y.cc/) · [Source](https://github.com/kyeunga25/personal-space)            |
+| RigStage       | Invite-only    | v1.0.1 public portfolio release                                              | [Public landing](https://rigstage.k-y.cc/)                                                       |
+
+## 核對詳情
+
+- **Wallpect：** `main` package version 與 release 同為 v0.4.0。公開版本提供
+  browser-only wallpaper preview、fitting 及 exact-size export；47 個合併 display
+  profiles 覆蓋 191 個已列名 Apple models。
+- **Anisonary：** `main` package version 與 release 同為 v1.3.0。四個已審閱季度快照
+  共 280 個 unique titles 及 615 筆已知 OP／ED records；搜尋及目錄在 browser／static
+  assets 內運作。
+- **StudyMix AI：** 沒有 public release tag；
+  [latest `main` CI](https://github.com/kyeunga25/studymix-ai/actions/runs/31494160075)
+  已通過，但 CI 不代表 production。項目仍是私人封閉測試，沒有公開註冊或公開使用者
+  內容，外部 AI adapter 預設停用；本次沒有核實到 public live URL。
+- **AisleStage：** [v0.5.1](https://github.com/kyeunga25/aislestage/releases/tag/v0.5.1)
+  是已核對 release；[v0.6.0 source development](https://github.com/kyeunga25/aislestage/blob/main/docs/RELEASE_STATUS.md)
+  尚未完成正式 release／live gates。公開頁面只描述 invite-only Campaign Pack
+  workspace，不把 v0.6.0 source milestone 寫成已發布版本。
+- **Personal Space：** [`main` v0.8.0](https://github.com/kyeunga25/personal-space/commit/2fdd048f8855f443d7f84a6b28324f5cdd53eece)
+  的 CI 與 Workers Build 已通過，公開 route 可讀取；GitHub latest Release tag 仍是
+  [v0.7.0](https://github.com/kyeunga25/personal-space/releases/tag/v0.7.0)。公開網站提供
+  Notes、Articles、search、archives 及 reviewed Editions，owner Studio 受身份保護。
+- **RigStage：** v1.0.1 是目前 portfolio 對外列出的 release。公開 landing 可讀取，
+  workspace 為 invite-only；較新的私人 source 不當作 public release 證據。私人
+  repository 不提供公開連結，亦不披露內部資源、資料或部署細節。
 
 ## 更新規則
 
 每次修改 homepage 前，逐項重新核對：
 
-1. GitHub repository 名稱、visibility、default branch、最新 release 及 main CI；
+1. GitHub repository 名稱、visibility、default branch、source version、最新 release 及
+   main CI；
 2. live URL 的 DNS、TLS、redirect、HTTP status、頁面身份及 access boundary；
 3. production 是否與 repository 中已發布版本一致；
 4. 數量、版本、語言、功能及成熟度是否仍由公開證據支持；
@@ -39,7 +66,8 @@
 
 ## English summary
 
-This page is the public evidence index for portfolio copy. A repository, CI
-run, preview, or release tag is not production proof by itself. Re-check each
-project's repository identity, release, live route, access boundary, and public
-claims before editing the homepage; omit or downgrade anything uncertain.
+This page is the public evidence index for portfolio copy. Source versions,
+releases, CI, and production are recorded separately. A repository, CI run,
+preview, or release tag is not production proof by itself. Re-check each
+project's repository identity, live route, access boundary, and public claims;
+omit or downgrade anything uncertain, and do not link private repositories.
