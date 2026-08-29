@@ -218,13 +218,11 @@ svg {
   grid-template-areas:
     "intro interests"
     "project tools"
-    "project elsewhere"
-    "active active";
+    "project elsewhere";
   grid-template-rows:
     minmax(190px, 270px)
     minmax(242px, 360px)
-    minmax(128px, 180px)
-    auto;
+    minmax(128px, 180px);
   align-content: start;
   gap: 18px;
   width: min(1440px, calc(100% - 48px));
@@ -618,7 +616,7 @@ svg {
   display: grid;
   flex: 1 1 0;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  grid-template-rows: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(3, minmax(0, 1fr));
   gap: 10px;
   min-height: 0;
   padding-top: 14px;
@@ -774,6 +772,15 @@ svg {
   font-weight: 700;
   text-decoration-thickness: 1.5px;
   text-underline-offset: 3px;
+}
+
+.project-source-note {
+  display: inline-flex;
+  min-height: 30px;
+  align-items: center;
+  color: #7a836f;
+  font-size: 0.72rem;
+  font-weight: 700;
 }
 
 .project-link svg,
@@ -993,112 +1000,6 @@ svg {
 
 .external-icon {
   color: var(--blue);
-}
-
-.active-panel {
-  grid-area: active;
-  min-height: 0;
-  padding: 22px 26px 26px;
-  animation-delay: 230ms;
-}
-
-.active-panel::after {
-  position: absolute;
-  top: -28px;
-  right: 11%;
-  width: 150px;
-  height: 88px;
-  content: "";
-  background-image: radial-gradient(circle, #b1c37e 1.2px, transparent 1.5px);
-  background-size: 7px 7px;
-  opacity: 0.22;
-  transform: rotate(7deg);
-}
-
-.active-heading {
-  align-items: flex-start;
-  padding-bottom: 14px;
-  border-bottom: 1px solid #d9dfcd;
-}
-
-.active-heading > svg {
-  flex: 0 0 28px;
-  stroke: var(--blue);
-}
-
-.active-heading > div {
-  display: grid;
-  gap: 3px;
-}
-
-.active-heading p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.78rem;
-  line-height: 1.4;
-}
-
-.active-projects {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-  padding-top: 14px;
-}
-
-.active-project {
-  display: grid;
-  grid-template-columns: 54px minmax(0, 1fr);
-  gap: 14px;
-  padding: 16px;
-  border: 1px solid #ccd5bd;
-  border-radius: 12px;
-  background: rgba(247, 249, 240, 0.82);
-}
-
-.active-mark {
-  display: grid;
-  width: 54px;
-  height: 54px;
-  place-items: center;
-  border: 1.5px solid #88a44e;
-  border-radius: 16px;
-  color: var(--blue-dark);
-  background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.75), transparent),
-    var(--blue-soft);
-  font-size: 0.82rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-}
-
-.rigstage-mark {
-  border-color: #879fbe;
-  color: #587393;
-  background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.78), transparent), #edf3fa;
-}
-
-.active-project-body {
-  min-width: 0;
-}
-
-.active-project h3 {
-  margin: 0;
-  font-size: 1.02rem;
-  letter-spacing: -0.025em;
-}
-
-.active-project p {
-  margin: 7px 0 0;
-  color: var(--muted);
-  font-size: 0.78rem;
-  line-height: 1.48;
-}
-
-.active-project .project-links {
-  margin-top: 8px;
 }
 
 .site-footer {
@@ -1338,8 +1239,7 @@ svg {
     grid-template-rows:
       154px
       314px
-      122px
-      auto;
+      122px;
     gap: 12px;
     width: min(1440px, calc(100% - 32px));
     padding: 12px 0;
@@ -1414,7 +1314,7 @@ svg {
   }
 
   .project-showcase {
-    grid-template-rows: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(3, minmax(0, 1fr));
     gap: 8px;
     padding-top: 8px;
   }
@@ -1446,7 +1346,8 @@ svg {
     margin-top: 2px;
   }
 
-  .project-link {
+  .project-link,
+  .project-source-note {
     min-height: 19px;
     font-size: 0.63rem;
   }
@@ -1519,14 +1420,6 @@ svg {
   .site-footer {
     min-height: 44px;
   }
-
-  .active-panel {
-    padding: 16px 20px 20px;
-  }
-
-  .active-project {
-    padding: 12px;
-  }
 }
 
 @media (max-width: 920px) {
@@ -1571,7 +1464,6 @@ svg {
       "interests"
       "tools"
       "project"
-      "active"
       "elsewhere";
     grid-template-rows: auto;
     align-content: normal;
@@ -1587,7 +1479,6 @@ svg {
   .interests-panel,
   .tools-panel,
   .project-panel,
-  .active-panel,
   .elsewhere-panel {
     min-height: auto;
     padding: 24px;
@@ -1644,17 +1535,10 @@ svg {
     margin-top: 9px;
   }
 
-  .project-link {
+  .project-link,
+  .project-source-note {
     min-height: 28px;
     font-size: 0.72rem;
-  }
-
-  .active-projects {
-    grid-template-columns: 1fr;
-  }
-
-  .active-project {
-    padding: 15px;
   }
 
   .theater-easter-egg {
@@ -1778,25 +1662,6 @@ svg {
 
   .github-link small {
     max-width: 185px;
-  }
-
-  .active-project {
-    grid-template-columns: 44px minmax(0, 1fr);
-    gap: 11px;
-    padding: 13px;
-  }
-
-  .active-mark {
-    width: 44px;
-    height: 44px;
-    border-radius: 13px;
-    font-size: 0.72rem;
-  }
-
-  .active-project .project-title-row {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 4px;
   }
 }
 
