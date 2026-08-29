@@ -71,17 +71,22 @@ const requiredIndexFragments = [
   "AisleStage",
   "Personal Space",
   "RigStage",
-  'datetime="2026-08-17"',
+  'datetime="2026-08-30"',
   "Learning, building, and moving toward the next stage.",
   "v0.4.0 · 47 display profiles · 191 named models",
   "v1.3.0 · 280 titles · 615 theme records",
-  "v0.5.1 release · v0.6.0 development · Invite-only",
-  "Live · v0.8.0",
+  "v0.5.1 release · v0.6.0 source · Invite-only",
+  "v0.8.0 source · v0.7.0 release · Owner-only Studio",
+  "v1.1 source · v1.0.1 release · Real AI disabled",
   "STAGE",
   "765",
   "The stars are shining. The show goes on.",
   "https://aislestage.k-y.cc/",
+  "https://studymix.k-y.cc/",
+  "https://space.k-y.cc/",
   "https://rigstage.k-y.cc/",
+  "assets/project-personal-space.webp",
+  "assets/project-rigstage.webp",
 ];
 
 for (const fragment of requiredIndexFragments) {
@@ -101,6 +106,9 @@ const forbiddenFragments = [
   "v1.1.0 · 280 titles",
   "Live · v0.6.0",
   'datetime="2026-08-02"',
+  'datetime="2026-08-17"',
+  "Public sites, protected workspaces",
+  'id="current-builds"',
   "http://",
   "<form",
   "<script src=",
@@ -113,11 +121,34 @@ for (const fragment of forbiddenFragments) {
   );
 }
 
-const rigStageCard = [
-  ...indexHtml.matchAll(/<article class="active-project">[\s\S]*?<\/article>/g),
-]
-  .map((match) => match[0])
-  .find((card) => card.includes("<h3>RigStage</h3>"));
+const projectCards = [
+  ...indexHtml.matchAll(/<article class="project-card">[\s\S]*?<\/article>/g),
+].map((match) => match[0]);
+
+assert(
+  projectCards.length === 6,
+  `index.html must contain exactly 6 unified project cards; found ${projectCards.length}`,
+);
+
+for (const card of projectCards) {
+  assert(
+    card.includes('class="project-media"'),
+    "project card is missing media",
+  );
+  assert(card.includes("<img"), "project card is missing an image");
+  assert(
+    card.includes('class="project-meta"'),
+    "project card is missing status detail",
+  );
+  assert(
+    card.includes('class="project-links"'),
+    "project card is missing links",
+  );
+}
+
+const rigStageCard = projectCards.find((card) =>
+  card.includes("<h3>RigStage</h3>"),
+);
 
 assert(rigStageCard, "index.html is missing the RigStage project card");
 assert(
