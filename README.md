@@ -4,7 +4,7 @@
 及 portfolio。網站只整理可由公開 repository、release、production route 及 access
 狀態核對的工作，不把 preview、草稿或本機功能描述為已發布產品。
 
-[入口網站 / Live](https://k-y.cc/) · [項目狀態 / Project status](docs/PROJECT_STATUS.md) · [安全政策 / Security](SECURITY.md) · [版權 / Copyright](COPYRIGHT.md)
+[入口網站 / Live](https://k-y.cc/) · [項目狀態 / Project status](docs/PROJECT_STATUS.md) · [安全政策 / Security](SECURITY.md) · [授權 / Licence](LICENSING.md)
 
 ## 運行與部署環境
 
@@ -111,7 +111,10 @@ runtime AI model. See [Self-hosting](docs/SELF_HOSTING.md),
 - **資料來源：** 只使用公開 repository、release、CI、live URL 及 access 狀態；不使用
   私人 dataset、使用者／應用資料或 database export。規則見
   [Project status](docs/PROJECT_STATUS.md)。
-- **授權：** 程式及文件依 [MIT License](LICENSE) 提供；第三方媒體仍需逐項核對權利。
+- **授權：** 可重用網站程式、樣式、驗證工具及相關技術文件依
+  [MIT License](LICENSE) 提供；作品集文案／編排、[`assets/**`](assets)、
+  品牌及第三方材料不在授權內。完整邊界見 [Licensing Scope](LICENSING.md) 與
+  [Third-Party Notices](THIRD_PARTY_NOTICES.md)。
 - **官方參考：** [GitHub Pages](https://docs.github.com/pages)、
   [Publishing source](https://docs.github.com/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)、
   [Custom domains](https://docs.github.com/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)、
