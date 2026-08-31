@@ -69,7 +69,9 @@ npm run check:links
 
 ## 法律與內容
 
-- Source code／文件採 MIT License；第三方媒體不會因此自動取得相同授權；
+- 可重用網站程式、樣式、驗證工具及相關技術文件按
+  [`LICENSING.md`](../LICENSING.md) 的範圍採 MIT License；作品集文案／編排、
+  `assets/**`、品牌及第三方媒體不會因此自動取得相同授權；
 - 新媒體需保存可審查的來源／權利證據，但不要公開含私人資料的帳戶文件；
 - 引用文字及品牌應保持必要、準確及不暗示 endorsement；
 - 若日後加入 analytics、form、身份、database、payment 或 AI runtime，必須先更新

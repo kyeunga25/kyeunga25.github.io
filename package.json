@@ -2,6 +2,7 @@
   "name": "k-y-cc-portfolio",
   "version": "1.0.0",
   "private": true,
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "check": "npm run check:html && npm run check:format && npm run check:site && npm run check:public",

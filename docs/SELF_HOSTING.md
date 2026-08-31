@@ -5,6 +5,11 @@
 本指南讓你把自己的 fork 部署成獨立的 GitHub Pages 靜態網站。請改用自己的公開
 內容、repository、domain 及帳戶；不要複製原站的私人資料或受控部署資訊。
 
+可重用網站程式、樣式及驗證工具依 MIT License 提供；原站作品集文案／編排、
+`assets/**`、項目品牌及第三方材料不在授權內。Fork 前先閱讀
+[`LICENSE`](../LICENSE) 與 [`LICENSING.md`](../LICENSING.md)，並替換所有排除
+內容。
+
 ## 先決條件
 
 - GitHub account；

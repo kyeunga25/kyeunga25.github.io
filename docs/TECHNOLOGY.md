@@ -44,8 +44,12 @@ record、database export、analytics event 或付款資料。
 
 ## License 與 attribution
 
-- Repository source 及文件依根目錄 [MIT License](../LICENSE) 提供；
-- MIT License 不會自動授予第三方圖片、logo、品牌或引用內容的權利；
+- 可重用網站程式、樣式、驗證工具及相關技術文件按
+  [Licensing Scope](../LICENSING.md) 的範圍依根目錄 [MIT License](../LICENSE)
+  提供；
+- MIT License 不包含作品集文案／編排、`assets/**`、第三方圖片、logo、品牌或
+  引用內容；
+- 依賴、媒體及平台邊界見 [Third-Party Notices](../THIRD_PARTY_NOTICES.md)；
 - 外部 project 名稱及連結只作 portfolio reference，不代表 endorsement；
 - 若不能安全公開素材來源／權利，應更換或移除素材，而不是公開私人證明文件。
 
