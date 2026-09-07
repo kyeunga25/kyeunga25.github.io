@@ -71,13 +71,13 @@ const requiredIndexFragments = [
   "AisleStage",
   "Personal Space",
   "RigStage",
-  'datetime="2026-08-30"',
+  'datetime="2026-09-08"',
   "Learning, building, and moving toward the next stage.",
-  "v0.4.0 · 47 display profiles · 191 named models",
-  "v1.3.0 · 280 titles · 615 theme records",
-  "v0.5.1 release · v0.6.0 source · Invite-only",
-  "v0.8.0 source · v0.7.0 release · Owner-only Studio",
-  "v1.1 source · v1.0.1 release · Real AI disabled",
+  "Released v0.4.0 · No uploads",
+  "v1.31.1 source · v1.31.0 release",
+  "v0.6.0 source · v0.5.1 release",
+  "v0.8.0 source, release and live",
+  "v1.1.0 source · v1.0.1 release",
   "STAGE",
   "765",
   "The stars are shining. The show goes on.",
@@ -152,8 +152,8 @@ const rigStageCard = projectCards.find((card) =>
 
 assert(rigStageCard, "index.html is missing the RigStage project card");
 assert(
-  !rigStageCard.includes(">Source</a"),
-  "RigStage must not expose a private repository link",
+  rigStageCard.includes("https://github.com/kyeunga25/pc-ai-3d-builder"),
+  "RigStage must link to its verified public repository",
 );
 
 assert(
