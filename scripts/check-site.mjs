@@ -71,20 +71,13 @@ const requiredIndexFragments = [
   "AisleStage",
   "Personal Space",
   "RigStage",
-  'datetime="2026-09-08"',
   "Learning, building, and moving toward the next stage.",
   "Released v0.4.0 · No uploads",
-  "v1.31.1 source · v1.31.0 release",
-  "v0.6.0 source · v0.5.1 release",
   "v0.8.0 source, release and live",
-  "v1.1.0 source · v1.0.1 release",
   "STAGE",
   "765",
   "The stars are shining. The show goes on.",
-  "https://aislestage.k-y.cc/",
-  "https://studymix.k-y.cc/",
   "https://space.k-y.cc/",
-  "https://rigstage.k-y.cc/",
   "assets/project-personal-space.webp",
   "assets/project-rigstage.webp",
 ];
@@ -97,6 +90,7 @@ for (const fragment of requiredIndexFragments) {
 }
 
 const forbiddenFragments = [
+  "Six public repositories",
   "AislePack",
   "motive-ecommerce-visuals",
   "v0.4.0 · 139 anime",
@@ -146,15 +140,38 @@ for (const card of projectCards) {
   );
 }
 
-const rigStageCard = projectCards.find((card) =>
-  card.includes("<h3>RigStage</h3>"),
-);
+const projectStatus = await read("docs/PROJECT_STATUS.md");
+const overviewProjects = [
+  ["RigStage", "rigstage", "pc-ai-3d-builder"],
+  ["AisleStage", "aislestage", "aislestage"],
+  ["StudyMix AI", "studymix", "studymix-ai"],
+];
 
-assert(rigStageCard, "index.html is missing the RigStage project card");
-assert(
-  rigStageCard.includes("https://github.com/kyeunga25/pc-ai-3d-builder"),
-  "RigStage must link to its verified public repository",
-);
+for (const [title, hostname, repository] of overviewProjects) {
+  const card = projectCards.find((entry) =>
+    entry.includes(`<h3>${title}</h3>`),
+  );
+  assert(card, `index.html is missing the ${title} project card`);
+  const overview = `https://${hostname}.k-y.cc/`;
+  const links = card.match(/<div class="project-links">([\s\S]*?)<\/div>/)[1];
+  const destinations = [...links.matchAll(/href="([^"]+)"/g)].map(
+    (match) => match[1],
+  );
+  assert(
+    destinations.length === 1 && destinations[0] === overview,
+    `${title} must link only to its product overview`,
+  );
+  assert(
+    projectStatus.includes(`](${overview})`),
+    `Project status must link to the ${title} product overview`,
+  );
+  const source = `github.com/kyeunga25/${repository}`;
+  assert(
+    !indexHtml.toLowerCase().includes(source) &&
+      !projectStatus.toLowerCase().includes(source),
+    `Public content must omit ${title} repository and release links`,
+  );
+}
 
 assert(
   notFoundHtml.includes('<meta name="robots" content="noindex, follow"'),
